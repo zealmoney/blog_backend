@@ -4,9 +4,9 @@ Django==4.1.7
 django-cors-headers==3.14.0
 djangorestframework==3.14.0
 gunicorn==21.2.0
-mysqlclient==2.1.1
 packaging==23.1
 Pillow==9.5.0
+psycopg2==2.9.7
 pytz==2023.2
 sqlparse==0.4.3
 tzdata==2023.2
