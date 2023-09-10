@@ -8,7 +8,7 @@ def upload_to(instance, filename):
 
 class Author(models.Model):
     name = models.CharField(max_length=200 , unique=True)
-    photo = models.ImageField(upload_to=author_upload_to)
+    photo = models.TextField(default="")
     bio = models.TextField()
 
     def __str__(self):
@@ -29,7 +29,7 @@ class Post(models.Model):
     slug = models.CharField(max_length=200)
     excerpt = models.TextField()
     content = models.TextField()
-    featuredImage = models.ImageField(upload_to=upload_to)
+    featuredImage = models.TextField(default="")
     featuredPost = models.BooleanField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE, to_field='name')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, to_field='name')
