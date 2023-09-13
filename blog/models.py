@@ -30,7 +30,7 @@ class Post(models.Model):
     slug = models.CharField(max_length=200)
     excerpt = models.TextField()
     content = models.TextField()
-    featuredImage = models.TextField(default="")
+    featuredImage = CloudinaryField("image")
     featuredPost = models.BooleanField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE, to_field='name')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, to_field='name')
