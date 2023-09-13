@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 def author_upload_to(instance, filename):
     return 'author/{filename}'.format(filename=filename)
@@ -8,7 +9,7 @@ def upload_to(instance, filename):
 
 class Author(models.Model):
     name = models.CharField(max_length=200 , unique=True)
-    photo = models.TextField(default="")
+    photo = CloudinaryField("image")
     bio = models.TextField()
 
     def __str__(self):
